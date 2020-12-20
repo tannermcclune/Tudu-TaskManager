@@ -1,4 +1,4 @@
-# Node.js & Passport Login
+# Tudu Task Manager App
 
 This is a to do list application
 
