@@ -1,0 +1,69 @@
+<div class="container">
+<br>
+<% include ../partials/doing-nav %>
+<br>
+
+<div class="card"
+    <ul class="list-group list-group-flush">
+
+        <div class="card-header">
+            <div class="row">
+                <div class="col-7 border-card">
+                    Task Name
+                </div>
+                <div class="col border-card">
+                    Due Date
+                </div>
+                <div class="col border-card">
+                    Priority
+                </div>
+                <div class="col-1">
+                    Task Type
+                </div>
+            </div>
+        </div>
+
+        <% tasks.forEach((task) => { %>
+        <% if (task.actionType == 'Doing') { %>
+        <li class="list-group-item hover-cover">
+            <a href="/dashboard/task/<%= task._id %>" class="task-link">
+                <div class="row">
+                    <div class="col-7 border-card">
+                        <%= task.taskName %>
+                    </div>
+                    <div class="col border-card">
+                        <%= task.dueDate %>
+                    </div>
+                    <div class="col border-card">
+                        <%= task.timeComplete %>
+                    </div>
+                    <div class="col-1">
+
+                        <% if (task.actionType == 'To Do') { %>
+                        <div class="status todo">
+                            <%= task.actionType %>
+                        </div>
+                        <% } %>
+
+                        <% if (task.actionType == 'Doing') { %>
+                        <div class="status doing">
+                            <%= task.actionType %>
+                        </div>
+                        <% } %>
+
+                        <% if (task.actionType == 'Done') { %>
+                        <div class="status done">
+                            <%= task.actionType %>
+                        </div>
+                        <% } %>
+                            
+                    </div>
+                </div>
+            </a>
+        </li>
+        <% } %>
+        <% }) %>
+
+    </ul>
+</div>
+</div>
