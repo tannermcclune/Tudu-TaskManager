@@ -21,7 +21,9 @@
 
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Description:</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" id="description" name="description" value="<%= task.description %>"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" id="description" name="description" value="<%= task.description %>">
+                <%= task.description %>
+            </textarea>
             </input>
           </div>
 
